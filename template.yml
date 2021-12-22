@@ -1,0 +1,14 @@
+---
+- name: Deploy files using a Jinja2 template
+  hosts: all
+  become: true
+  gather_facts: yes
+
+  tasks:
+    - name: Deploy the message of today template
+      template:
+        src: motd.j2
+        dest: /etc/motd
+        owner: root
+        group: root
+        mode: "0644"

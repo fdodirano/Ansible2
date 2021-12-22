@@ -1,0 +1,11 @@
+localhost ansible_sudo_pass=12345678
+
+[webservers]
+web1 
+web2
+
+
+[dbservers]
+db1 
+db2 
+

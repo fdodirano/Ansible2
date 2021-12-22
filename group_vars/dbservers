@@ -1,0 +1,7 @@
+#Variables for dbservers group
+
+db_username:
+  - test
+  - dev
+  - qa
+description: "{{ item }}'s User Account"

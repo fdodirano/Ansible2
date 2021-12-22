@@ -1,0 +1,12 @@
+---
+- name: Upgrading servers using block, rescue & always
+  hosts: all
+  become: true
+  gather_facts: yes
+  
+- roles:
+    - users
+    
+
+  
+         

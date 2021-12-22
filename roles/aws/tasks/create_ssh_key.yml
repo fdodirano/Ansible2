@@ -1,0 +1,13 @@
+---
+
+  - name: Create SSH Key
+    ec2_key:
+      aws_access_key: "{{ aws_id }}"
+      aws_secret_key: "{{ aws_key }}"
+      region: "{{ aws_region }}"
+      name: "{{ ssh_keyname }}"
+    register: ec2_key_result
+
+  - name: Save private key
+    copy: content="{{ ec2_key_result.key.private_key }}" dest="./odira_ansible_key.pem" mode=0600
+    when: ec2_key_result.changed

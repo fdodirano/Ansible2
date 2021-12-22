@@ -1,0 +1,17 @@
+---
+
+  - name: Create a VPC with default tenacy
+    ec2_vpc_net:
+      aws_access_key: "{{ aws_id }}"
+      aws_secret_key: "{{ aws_key }}"
+      region: "{{ aws_region }}"
+      name: odira_ansible_vpc_net
+      cidr_block: 10.10.0.0/16
+      tags:
+        module: ec2_vpc_net
+      tenacy: default
+    register: ansibleVPC
+
+  - name: VPC output
+    debug:
+    var: ansibleVPC

@@ -1,0 +1,21 @@
+---
+
+  - name: Create Security Group
+    ec2_group:
+      aws_access_key: "{{ aws_id }}"
+      aws_secret_key: "{{ aws_key }}"
+      region: "{{ aws_region }}"
+      name: " Odira Ansible Security Group"
+      description: " Odira Ansible Security Group "
+      vpc_id: "{{ ansibleVPC.vpc.id }}"
+      tags: 
+        Name: Odira Ansible Security Group
+      rules: 
+        - proto: "tcp"
+        - ports: "22"
+        - cidr_ip: 0.0.0.0/0
+      register: my_vpc_sg
+
+  - name: Set Security Group ID i variable
+    set_fact:
+      sg_id: "{{ my_vpc_sg.group_id }}"

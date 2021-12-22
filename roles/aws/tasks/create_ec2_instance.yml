@@ -1,0 +1,29 @@
+---
+
+  - name: Basic provisioning of ec2 instance
+    ec2:
+      aws_access_key: "{{ aws_id }}"
+      aws_secret_key: "{{ aws_key }}"
+      region: "{{ aws_region }}"
+      image: ami-00399ec92321828f5
+      instance_type: t2.micro
+      key_name: "{{ ssh_keyname }}"
+      count: 1
+      state: present
+      group_id: sg-d47de9a3
+      wait: yes
+      wait_timeout: 500
+      monitoring: no
+      vpc_subnet_id: subnet-63134a2f
+      assign_public_ip: yes
+      instance_tags:
+        Name: web3
+        Team: devops
+        Role: webservers
+        Env: dev
+        Service: ansible-test
+    register: ec2info
+
+  - name: Print the results
+    debug:
+      var: ec2info

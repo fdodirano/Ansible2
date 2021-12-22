@@ -1,0 +1,44 @@
+---
+#Current VPC
+vpc_id_default: vpc-b3ea7ad8
+#
+# Instance Type
+instance_type: t2.micro
+#
+# Instance Tags
+#Name
+Name: web2
+#name
+Team: devops
+Role: webservers
+Env: dev
+Service: ansible-test
+# AWS Region
+aws_region: us-east-2
+#
+# Defaults Subnets
+subnet1: subnet-63134a2f
+#
+subnet2: subnet-63134a2f
+#
+subnet3: subnet-63134a2f
+#
+#Images
+aws_image: ami-00399ec92321828f5
+#
+#Key name
+keypair_name: odira
+#
+#Security Group
+#sg_group_name: sg-d47de9a3
+#
+# SSH port
+ssh_port: 22
+#
+# cidr_ip inbound
+cidr_ip_inbound: '0.0.0.0/0'
+#
+#cidr_ip outbound
+cidr_ip_outbound: '0.0.0.0/0'
+outbound_name: 
+#

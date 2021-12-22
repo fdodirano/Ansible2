@@ -1,0 +1,10 @@
+---
+- name: Creating new users for webservers & dbservers
+  hosts: localhost
+  connection: local
+  become: true
+  gather_facts: no
+
+  roles:
+    - acandid.aws_ec2
+    

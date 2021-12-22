@@ -1,0 +1,7 @@
+#variables for webservers group
+
+ws_username: 
+  - member
+  - admin
+  - developer
+description: "{{ item }}'s User Account "

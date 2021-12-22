@@ -1,0 +1,20 @@
+---
+
+  - name: Find AMIs published by Red Hat 309956199498. Non-beta and x86.
+    ec2_ami_info:
+      aws_access_key: "{{ aws_id }}"
+      aws_secret_key: "{{ aws_key }}"
+      region: "{{ aws_region }}"
+      owners: 309956199498
+      filters:
+        architecture: x86_64
+        name: RHEL-8*HVM-*
+    register: amis
+
+  - name: Show AMI's
+    debug:
+      var: amis
+
+  - name: Get the latest one
+    set_fact:
+      latest_ami: "{{ amis.images | sort(attributes='creation_date') | last }}"

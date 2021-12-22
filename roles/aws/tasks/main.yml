@@ -1,0 +1,29 @@
+---
+#tasks file for aws provisioning
+
+  - name: Include info file
+    include_vars: info.yml
+
+  # - name: Include VPC file
+  #   import_tasks: create_vpc.yml
+
+  # - name: Include Internet Gateway file
+  #   import_tasks: create_internet_gateway.yml
+
+  # - name: Include Public Subnet file
+  #   import_tasks: create_public_subnet.yml
+
+  # - name: Include Route Table file
+  #   import_tasks: create_route_table.yml
+
+  # - name: Include Security Group file
+  #   import_tasks: create_security_group.yml
+
+  # - name: Include Find AMI type e.g RedHat 
+  #   import_tasks: find_RedHat_AMI.yml
+
+  # - name: Include SSH Key file
+  #   import_tasks: create_ssh_key.yml
+
+  - name: Include Provisioning AWS EC2 file
+    import_tasks: create_ec2_instance.yml

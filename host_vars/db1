@@ -1,0 +1,7 @@
+#connection variable for db1
+
+
+ansible_user: ubuntu
+ansible_become: false
+ansible_ssh_host: ec2-3-15-176-126.us-east-2.compute.amazonaws.com
+ansible_ssh_user: ubuntu
